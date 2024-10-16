@@ -17,10 +17,9 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     align-content: center;
     justify-content: center;
-    height: 200px;
+    height: 150px;
     width: 400px;
     background-color: lightgrey;
     font-family: monospace;
@@ -31,7 +30,6 @@
 
 .buttons {
     margin: 10px;
-    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
