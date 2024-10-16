@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Digital-7 Mono";
+    src: url(/fonts/Digital7Mono-Yz9J4.ttf);
+    /*  license: Freeware, Non-Commercial
+        link: https://www.fontspace.com/digital-7-font-f7087 */
+}
+
 .calculator {
     margin: 100px auto;
     border: 1px solid black;
@@ -22,8 +29,8 @@
     height: 150px;
     width: 400px;
     background-color: lightgrey;
-    font-family: monospace;
-    font-size: 65px;
+    font-family: "Digital-7 Mono";
+    font-size: 80px;
     text-align: end;
     padding-right: 10px;
 }
