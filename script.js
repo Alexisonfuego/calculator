@@ -1,19 +1,8 @@
 //create initial functions
-let add = function (x, y) {
-    return x + y
-}
-
-let subtract = function (x, y) {
-    return x - y
-}
-
-let multiply = function (x, y) {
-    return x * y
-}
-
-let divide = function (x, y) {
-    return x / y
-}
+let add = (x, y) => x + y
+let subtract = (x, y) => x - y
+let multiply = (x, y) => x * y
+let divide = (x, y) => x / y
 
 let firstNumber
 let operator
@@ -33,6 +22,9 @@ let firstDisplayNumber = document.querySelector(".firstNumber")
 let secondDisplayNumber = document.querySelector(".secondNumber")
 let resultDisplayNumber = document.querySelector(".result")
 let inputButton = document.querySelectorAll(".input")
+let clearButton = document.querySelector(".clear")
+let allClearButton = document.querySelector(".allClear")
+let equalsButton = document.querySelector(".equals")
 
 
 inputButton.forEach((input) => {
@@ -62,3 +54,29 @@ inputButton.forEach((input) => {
         }
     })
 })
+
+clear = function() {
+    if (operatorSelected) {
+        secondNumber = ""
+        secondDisplayNumber.textContent = (operator + " ")
+    } else {
+        firstNumber = ""
+        firstDisplayNumber.textContent = "0"
+    }
+}
+
+
+allClear = function() {
+    firstNumber = ""
+    operator = ""
+    secondNumber = ""
+    result = ""
+    firstDisplayNumber.textContent = "0"
+    secondDisplayNumber.textContent = ""
+    resultDisplayNumber.textContent = ""
+    operationStarted = false
+    operatorSelected = false    
+}
+
+clearButton.addEventListener('click', clear)
+allClearButton.addEventListener('click', allClear)
