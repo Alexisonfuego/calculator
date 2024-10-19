@@ -1,6 +1,12 @@
+body {
+    height: 100vh;
+    margin: 0px;
+    background-image: linear-gradient(rgb(134, 134, 134), rgb(56, 50, 50));
+}
+
 @font-face {
     font-family: "Digital-7 Mono";
-    src: url(../TheOdinProjectCalculator/fonts/Digital7Mono-Yz9J4.ttf);
+    src: url(../fonts/Digital7Mono-Yz9J4.ttf);
     /*  license: Freeware, Non-Commercial
         link: https://www.fontspace.com/digital-7-font-f7087 */
 }
@@ -15,7 +21,7 @@
     align-content: center;
     justify-content: center;
     width: 450px;
-    background-color: grey;
+    background-color: rgb(56, 50, 50);
 }
 
 .display {
@@ -28,7 +34,7 @@
     justify-content: center;
     height: 150px;
     width: 400px;
-    background-color: lightgrey;
+    background-color: rgb(202, 202, 202);
     font-family: "Digital-7 Mono";
     font-size: 80px;
     text-align: end;
@@ -60,3 +66,19 @@ button {
 .span-two {
     width: 200px;
 }
+
+.symbol {
+    background-color: rgb(253, 127, 0);
+    color: white;
+}
+
+/* .clear {background-color: red;} */
+
+.symbol:hover {background-color: rgb(237, 118, 0);}
+
+.number {    
+    background-color: rgb(163, 163, 166);
+    color: white;
+}
+
+.number:hover {background-color: rgb(146, 146, 149);}
