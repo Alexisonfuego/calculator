@@ -35,8 +35,6 @@ let operate = function (operator, x, y) {
     }
 }
 
-// console.log(operate(multiply, 3, 2));
-
 let firstDisplayNumber = document.querySelector(".firstNumber")
 let secondDisplayNumber = document.querySelector(".secondNumber")
 let resultDisplayNumber = document.querySelector(".result")
@@ -82,14 +80,28 @@ inputButton.forEach((input) => {
 
 //calculate result
 equalsButton.addEventListener('click', () => {
-    firstNumber = parseFloat(firstNumber)
-    secondNumber = parseFloat(secondNumber)
-    result = operate(operator, firstNumber, secondNumber)
+    firstNumber = parseFloat(firstNumber);
+    secondNumber = parseFloat(secondNumber);
+    //check for invalid input
+    if (isNaN(secondNumber)) {
+        secondDisplayNumber.textContent = (operator + " ERROR")
+        return;
+    }
+    //calculate result
+    result = operate(operator, firstNumber, secondNumber);
+    
+    //check for valid result
+    if (isNaN(result) || result === Infinity) {
+        secondDisplayNumber.textContent = (operator + " ERROR")
+        secondNumber = "";
+        return;
+    }
     //set up for subsequent calculations
-    firstNumber = result
-    secondNumber = ""
-    firstDisplayNumber.textContent = result
-    secondDisplayNumber.textContent = ""
+    firstNumber = result;
+    secondNumber = "";
+    //update display
+    firstDisplayNumber.textContent = result;
+    secondDisplayNumber.textContent = "";
 })
 
 //clear current input
