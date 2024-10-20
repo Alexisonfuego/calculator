@@ -22,10 +22,14 @@ let firstDisplayNumber = document.querySelector(".firstNumber")
 let secondDisplayNumber = document.querySelector(".secondNumber")
 let resultDisplayNumber = document.querySelector(".result")
 let inputButton = document.querySelectorAll(".input")
+let decimalButton = document.querySelector(".decimal")
 let clearButton = document.querySelector(".clear")
 let allClearButton = document.querySelector(".allClear")
 let equalsButton = document.querySelector(".equals")
 
+function toggleDecimal(number) {
+    number.includes('.') ? (decimalButton.disabled = true) : decimalButton.disabled = false
+}
 
 inputButton.forEach((input) => {
     input.addEventListener('click', (event) => {
@@ -36,6 +40,7 @@ inputButton.forEach((input) => {
         if (input.classList.contains('number') && !operatorSelected) {
             firstNumber = (!firstNumber) ? inputText : (firstNumber + inputText)
             firstDisplayNumber.textContent = firstNumber
+            toggleDecimal(firstNumber)
             operationStarted = true
         
         //select operator
@@ -50,10 +55,12 @@ inputButton.forEach((input) => {
         } else if (input.classList.contains('number') && operatorSelected) {
             secondNumber = (!secondNumber) ? inputText : (secondNumber + inputText)
             secondDisplayNumber.textContent = (operator + " " + secondNumber)
+            toggleDecimal(secondNumber)
             operationStarted = true
         }
     })
 })
+
 
 clear = function() {
     if (operatorSelected) {
