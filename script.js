@@ -13,7 +13,26 @@ let operatorSelected = false
 
 
 let operate = function (operator, x, y) {
-    return (operator(x, y))
+    switch (operator) {
+        case '+':
+            return add(x, y)
+            break;
+        
+        case '-':
+            return subtract(x, y)
+            break;
+        
+        case '*':
+            return multiply(x, y)
+            break;
+        
+        case '/':
+            return divide(x, y)
+            break;
+
+        default:
+            return "ERROR"
+    }
 }
 
 // console.log(operate(multiply, 3, 2));
@@ -61,7 +80,20 @@ inputButton.forEach((input) => {
     })
 })
 
+//calculate result
+equalsButton.addEventListener('click', () => {
+    firstNumber = parseFloat(firstNumber)
+    secondNumber = parseFloat(secondNumber)
+    // console.log(firstNumber, operator, secondNumber);
+    result = operate(operator, firstNumber, secondNumber)
+    resultDisplayNumber.textContent = result
+    firstNumber = ""
+    secondNumber = ""
+    firstDisplayNumber.textContent = ""
+    secondDisplayNumber.textContent = ""
+})
 
+//clear current input
 clear = function() {
     if (operatorSelected) {
         secondNumber = ""
@@ -72,7 +104,7 @@ clear = function() {
     }
 }
 
-
+//clear all input
 allClear = function() {
     firstNumber = ""
     operator = ""
