@@ -84,12 +84,11 @@ inputButton.forEach((input) => {
 equalsButton.addEventListener('click', () => {
     firstNumber = parseFloat(firstNumber)
     secondNumber = parseFloat(secondNumber)
-    // console.log(firstNumber, operator, secondNumber);
     result = operate(operator, firstNumber, secondNumber)
-    resultDisplayNumber.textContent = result
-    firstNumber = ""
+    //set up for subsequent calculations
+    firstNumber = result
     secondNumber = ""
-    firstDisplayNumber.textContent = ""
+    firstDisplayNumber.textContent = result
     secondDisplayNumber.textContent = ""
 })
 
