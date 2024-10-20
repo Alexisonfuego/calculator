@@ -4,10 +4,10 @@ let subtract = (x, y) => x - y;
 let multiply = (x, y) => x * y;
 let divide = (x, y) => x / y;
 
-let firstNumber;
-let operator;
-let secondNumber;
-let result;
+let firstNumber = "";
+let operator = "";
+let secondNumber = "";
+let result = "";
 let operationStarted = false;
 let operatorSelected = false;
 
@@ -100,6 +100,8 @@ equalsButton.addEventListener("click", () => {
   //set up for subsequent calculations
   firstNumber = result;
   secondNumber = "";
+  operator = "";
+  operatorSelected = false;
   //update display
   firstDisplayNumber.textContent = result;
   secondDisplayNumber.textContent = "";
@@ -113,6 +115,7 @@ clear = function () {
   } else {
     firstNumber = "";
     firstDisplayNumber.textContent = "0";
+    secondDisplayNumber.textContent = "";
   }
 };
 
