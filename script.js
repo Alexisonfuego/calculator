@@ -122,7 +122,7 @@ equalsButton.addEventListener("click", () => {
   console.log(result);
 
   //check for valid result
-  if (isNaN(result) || result === Infinity) {
+  if (!isFinite(result)) {
     secondDisplayNumber.textContent = operator + " ERROR";
     secondNumber = "";
     return;
