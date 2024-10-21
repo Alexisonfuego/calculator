@@ -75,6 +75,16 @@ inputButton.forEach((input) => {
   });
 });
 
+let limitDisplayLength = function(number) {
+  let strNumber = number.toString();
+
+  if (strNumber.length > 9) {
+    return parseFloat(number).toExponential(4);
+  } else {
+    return parseFloat(number);
+  }
+}
+
 //calculate result
 equalsButton.addEventListener("click", () => {
   firstNumber = parseFloat(firstNumber);
@@ -86,7 +96,9 @@ equalsButton.addEventListener("click", () => {
   }
   //calculate result
   result = operate(operator, firstNumber, secondNumber);
-
+  result = limitDisplayLength(result);
+  console.log(result);
+  
   //check for valid result
   if (isNaN(result) || result === Infinity) {
     secondDisplayNumber.textContent = operator + " ERROR";
