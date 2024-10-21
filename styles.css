@@ -1,84 +1,88 @@
 body {
-    height: 100vh;
-    margin: 0px;
-    background-image: linear-gradient(rgb(134, 134, 134), rgb(56, 50, 50));
+  height: 100vh;
+  margin: 0px;
+  background-image: linear-gradient(rgb(134, 134, 134), rgb(56, 50, 50));
 }
 
 @font-face {
-    font-family: "Digital-7 Mono";
-    src: url(https://alexisonfuego.github.io/calculator/fonts/Digital7Mono-Yz9J4.ttf);
-    /*  license: Freeware, Non-Commercial
+  font-family: "Digital-7 Mono";
+  src: url(https://alexisonfuego.github.io/calculator/fonts/Digital7Mono-Yz9J4.ttf);
+  /*  license: Freeware, Non-Commercial
         link: https://www.fontspace.com/digital-7-font-f7087 */
 }
 
 .calculator {
-    margin: 100px auto;
-    border: 5px solid black;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 450px;
-    background-color: rgb(56, 50, 50);
+  margin: 100px auto;
+  border: 5px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 450px;
+  background-color: rgb(56, 50, 50);
 }
 
 .display {
-    margin: 20px 10px 10px 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    height: 150px;
-    width: 400px;
-    background-color: rgb(202, 202, 202);
-    font-family: "Digital-7 Mono";
-    font-size: 80px;
-    text-align: end;
-    padding-right: 10px;
+  margin: 20px 10px 10px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 150px;
+  width: 400px;
+  background-color: rgb(202, 202, 202);
+  font-family: "Digital-7 Mono";
+  font-size: 80px;
+  text-align: end;
+  padding-right: 10px;
 }
 
 .buttons {
-    margin: 10px 10px 20px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: 500px;
-    width: 400px;
+  margin: 10px 10px 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 500px;
+  width: 400px;
 }
 
 button {
-    width: 100px;
-    height: 100px;
-    font-size: 30px;
-    font-weight: bold;
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .span-two {
-    width: 200px;
+  width: 200px;
 }
 
 .symbol {
-    background-color: rgb(253, 127, 0);
-    color: white;
+  background-color: rgb(253, 127, 0);
+  color: white;
 }
 
 /* .clear {background-color: red;} */
 
-.symbol:hover {background-color: rgb(237, 118, 0);}
-
-.number {    
-    background-color: rgb(163, 163, 166);
-    color: white;
+.symbol:hover {
+  background-color: rgb(237, 118, 0);
 }
 
-.number:hover {background-color: rgb(146, 146, 149);}
+.number {
+  background-color: rgb(163, 163, 166);
+  color: white;
+}
+
+.number:hover {
+  background-color: rgb(146, 146, 149);
+}
