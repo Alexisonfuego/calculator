@@ -45,6 +45,31 @@ function toggleDecimal(number) {
     : (decimalButton.disabled = false);
 }
 
+let limitInputLength = function(input) {
+  let strInput = input.toString();
+  
+  if (strInput.length > 7) {
+    inputButton.forEach((btn) => {
+      btn.classList.contains("number") ? btn.disabled = true : btn.disabled = false;
+    }) 
+  } else {
+    inputButton.forEach((btn) => {
+      btn.disabled = false;
+    })
+  }
+}
+
+let limitResultLength = function(number) {
+  let strNumber = number.toString();
+
+  if (strNumber.length > 9) {
+    return parseFloat(number).toExponential(4);
+  } else {
+    return parseFloat(number);
+  }
+}
+
+
 inputButton.forEach((input) => {
   input.addEventListener("click", (event) => {
     //take input value
@@ -55,6 +80,7 @@ inputButton.forEach((input) => {
       firstNumber = !firstNumber ? inputText : firstNumber + inputText;
       firstDisplayNumber.textContent = firstNumber;
       toggleDecimal(firstNumber);
+      limitInputLength(firstNumber);
       operationStarted = true;
 
       //select operator
@@ -63,6 +89,10 @@ inputButton.forEach((input) => {
         operator = inputText;
         secondDisplayNumber.textContent = operator + " ";
         operatorSelected = true;
+
+        inputButton.forEach((btn) => {
+          btn.disabled = false;
+        })
       }
 
       //generate second number
@@ -70,20 +100,11 @@ inputButton.forEach((input) => {
       secondNumber = !secondNumber ? inputText : secondNumber + inputText;
       secondDisplayNumber.textContent = operator + " " + secondNumber;
       toggleDecimal(secondNumber);
+      limitInputLength(secondNumber);
       operationStarted = true;
     }
   });
 });
-
-let limitDisplayLength = function(number) {
-  let strNumber = number.toString();
-
-  if (strNumber.length > 9) {
-    return parseFloat(number).toExponential(4);
-  } else {
-    return parseFloat(number);
-  }
-}
 
 //calculate result
 equalsButton.addEventListener("click", () => {
@@ -96,7 +117,7 @@ equalsButton.addEventListener("click", () => {
   }
   //calculate result
   result = operate(operator, firstNumber, secondNumber);
-  result = limitDisplayLength(result);
+  result = limitResultLength(result);
   console.log(result);
   
   //check for valid result
