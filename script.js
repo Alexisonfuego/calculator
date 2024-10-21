@@ -45,21 +45,23 @@ function toggleDecimal(number) {
     : (decimalButton.disabled = false);
 }
 
-let limitInputLength = function(input) {
+let limitInputLength = function (input) {
   let strInput = input.toString();
-  
+
   if (strInput.length > 7) {
     inputButton.forEach((btn) => {
-      btn.classList.contains("number") ? btn.disabled = true : btn.disabled = false;
-    }) 
+      btn.classList.contains("number")
+        ? (btn.disabled = true)
+        : (btn.disabled = false);
+    });
   } else {
     inputButton.forEach((btn) => {
       btn.disabled = false;
-    })
+    });
   }
-}
+};
 
-let limitResultLength = function(number) {
+let limitResultLength = function (number) {
   let strNumber = number.toString();
 
   if (strNumber.length > 9) {
@@ -67,8 +69,7 @@ let limitResultLength = function(number) {
   } else {
     return parseFloat(number);
   }
-}
-
+};
 
 inputButton.forEach((input) => {
   input.addEventListener("click", (event) => {
@@ -92,7 +93,7 @@ inputButton.forEach((input) => {
 
         inputButton.forEach((btn) => {
           btn.disabled = false;
-        })
+        });
       }
 
       //generate second number
@@ -119,7 +120,7 @@ equalsButton.addEventListener("click", () => {
   result = operate(operator, firstNumber, secondNumber);
   result = limitResultLength(result);
   console.log(result);
-  
+
   //check for valid result
   if (isNaN(result) || result === Infinity) {
     secondDisplayNumber.textContent = operator + " ERROR";
