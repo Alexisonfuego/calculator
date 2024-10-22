@@ -1,16 +1,17 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgb(134, 134, 134), rgb(56, 50, 50));
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgb(134, 134, 134), rgb(56, 50, 50));
+}
 
 @font-face {
   font-family: "Digital-7 Mono";
@@ -93,4 +94,15 @@ button {
 
 .number:hover {
   background-color: rgb(146, 146, 149);
+}
+
+.footer a {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  color: grey;
+  font-size: 40px;
+  font-family: "Digital-7 Mono";
+  text-decoration: none;
+  font-weight: bold;
 }
