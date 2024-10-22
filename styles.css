@@ -100,9 +100,13 @@ button {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  color: grey;
+  color: rgb(128, 128, 128);
   font-size: 40px;
   font-family: "Digital-7 Mono";
   text-decoration: none;
   font-weight: bold;
+}
+
+.footer a:hover {
+  color: rgb(160, 160, 160);
 }
